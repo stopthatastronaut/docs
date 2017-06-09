@@ -131,11 +131,11 @@ function Upgrade-Tentacle ($rel, $loc, $hm, $sthumb, $sxsPort)
 # If sxsPort ('side-by-side port') is specified, the old Tentacle will remain running
 # alongside the new one. If an sxsPort is not specified, the old Tentacle will be
 # uninstalled.
-Upgrade-Tentacle `
-  -rel "2.0.13.1100-x64" `
-  -loc "${env:ProgramFiles}\Octopus Deploy\Tentacle" `
-  -hm "${env:SystemDrive}\Octopus" `
-  -sthumb "*** ENTER OCTOPUS THUMBPRINT HERE ***" `
+Upgrade-Tentacle 
+  -rel "2.0.13.1100-x64" 
+  -loc "${env:ProgramFiles}\Octopus Deploy\Tentacle" 
+  -hm "${env:SystemDrive}\Octopus" 
+  -sthumb "*** ENTER OCTOPUS THUMBPRINT HERE ***" 
   -sxsPort "10934"
 ```
 
