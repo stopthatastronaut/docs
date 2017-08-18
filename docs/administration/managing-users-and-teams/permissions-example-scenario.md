@@ -1,3 +1,9 @@
+---
+title: Permissions Example Scenario
+description: This page outlines a simple scenario to show how permissions, roles, teams and users are used together to limit authorization in Octopus.
+position: 4
+---
+
 This page is designed to be an introduction to using permissions with Octopus, and how permissions, roles and teams work together in allowing users access to appropriate information. It's commonly a little confusing at first as the control you have is so granular, but the concept can be simplified to this.
 
 - Permissions are given to a role
