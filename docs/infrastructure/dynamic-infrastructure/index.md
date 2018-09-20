@@ -1,13 +1,14 @@
 ---
-title: Managing Resources Using Scripts
+title: Dynamic Infrastructure
 description: Octopus resources can be created using service messages allowing resources that you currently can script in Azure to be modeled in Octopus (dynamic infrastructure).
 position: 120
 ---
 
-Some resources can be created within Octopus from the same scripts that you use to create them on Azure. By adding some additional commands Web Apps you create on Azure can also be created within Octopus as deployment targets.
+Some resources can be created within Octopus from the same scripts that you use to create them in your infrastructure. By adding some additional commands, Web Apps, Service Fabric Clusters, Cloud Services and Kubernetes Clusters you create can also be created within Octopus as deployment targets.
 
 :::success
 As of the **Octopus 2018.5** release, only Azure Service Principal Accounts, Azure Web Apps, Azure Service Fabric and Azure Cloud Services targets are supported.
+In **Octopus 2018.8**, support for Kubernetes Clusters was added.
 :::
 
 ## Available Commands and Syntax
@@ -30,6 +31,8 @@ Before you can create dynamic targets in an Environment, the environment needs t
 
 [Azure Cloud Service](/docs/infrastructure/dynamic-infrastructure/azure-cloud-service-target.md)
 
+[Kubernetes Cluster](/docs/infrastructure/dynamic-infrastructure/kubernetes-target.md)
+
 [Remove Target](/docs/infrastructure/dynamic-infrastructure/remove-target.md)
 
 ### Restrictions
@@ -40,7 +43,6 @@ This cannot be overridden through the commands.
 :::warning
 These commands are not available in the **Script Console**.
 :::
-
 
 ## Examples
 

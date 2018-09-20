@@ -1,7 +1,7 @@
 ---
 title: Remove Target Command
 description: Cmdlet for removing an Octopus target
-position: 50
+position: 100
 ---
 
 ## Delete Target
