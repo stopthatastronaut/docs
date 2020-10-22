@@ -23,11 +23,15 @@ Before you can define your deployment processes or runbooks, you must create a p
 
 Now that you've created a project, you can define your [deployment process](/docs/deployment-process/index.md) or [runbooks](/docs/runbooks/index.md).
 
-## Project settings
+## Project settings {#project-settings}
 
-You can change the projects settings by accessing the settings menu on the project's main page. The settings you can change are:
+You can change the project settings by accessing the settings menu on the project's main page.
 
-- Name.
+### General settings {#general-settings}
+
+The general settings you can change are:
+
+- Name
 - Enable or disable the project to allow or prevent releases and deployments from being created.
 - [Logo](#project-logo)
 - Description
@@ -35,7 +39,7 @@ You can change the projects settings by accessing the settings menu on the proje
 - [Release Versioning](/docs/releases/release-versioning.md)
 - [Release Notes Template](/docs/releases/release-notes.md#Release-Notes-Templates)
 
-### Deployment settings
+#### Deployment settings
 
 - Package re-deployment
     - Specify to always deploy all packages or to skip any package steps that are already installed.
@@ -49,6 +53,22 @@ You can change the projects settings by accessing the settings menu on the proje
     - Specify a template for each deployment's changes.
 - Default failure mode
     - Specify whether or not to use [guided failure mode](/docs/releases/guided-failures.md).
+
+### Version Control settings {#version-control-settings}
+
+For projects that are configured to use [Config as Code](/docs/projects/config-as-code/index.md), you can change the version control settings by navigating to **{{ Settings, Version Control }}** on the project's main page.
+
+:::important
+**Config as Code is part of our Early Access Program (EAP) and may contain bugs or be unstable.**
+:::
+
+The settings you can change are:
+
+- Git Repository - the URL of the Git repository where you want to store your deployment and runbook processes.
+- Authentication - the method to authenticate with the Git repository. This may be a personal access token depending on which provider you're using.
+- Default branch name.
+
+Once you've updated your version control settings, you can verify your changes by clicking **TEST**. Click **SAVE** to store your changes.
 
 ## Project logo {#project-logo}
 
