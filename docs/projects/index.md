@@ -56,10 +56,10 @@ The general settings you can change are:
 
 ### Version Control settings {#version-control-settings}
 
-For projects that are configured to use [Config as Code](/docs/projects/config-as-code/index.md), you can change the version control settings by navigating to **{{ Settings, Version Control }}** on the project's main page.
+For projects that are configured to use [Configuration as Code](/docs/projects/configuration-as-code/index.md), you can change the version control settings by navigating to **{{ Settings, Version Control }}** on the project's main page.
 
-:::important
-**Config as Code is part of our Early Access Program (EAP) and may contain bugs or be unstable.**
+:::warning
+**Configuration as Code is part of our Early Access Program (EAP) and may contain bugs or be unstable.**
 :::
 
 The settings you can change are:
