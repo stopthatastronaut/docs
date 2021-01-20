@@ -1,5 +1,5 @@
 ---
-title: Get the raw output from a deployment process
+title: Deployment Process as JSON
 description: How to get the raw output from a deployment process to help the Octopus team resolve deployment related issues.
 position: 1
 ---
