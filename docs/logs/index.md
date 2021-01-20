@@ -16,13 +16,9 @@ This is a non-exhaustive list of logs that may come in handy and a quick descrip
 - **Octopus Server Logs:** A default installation will mean that log files will be created in a subdirectory called `Logs` in Octopus Home or `C:\Octopus\Logs`
 These logs will contain ...
 Verbosity can be changed by following [these instructions](/docs/support/log-files/index.md)
-
 - **Octopus Tentacle Logs:**
-
 - **Audit Logs:**
-
 - **OctopusMigrator Logs:**
-
 - **Process Dump:**
 
 
