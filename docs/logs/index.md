@@ -19,7 +19,19 @@ Verbosity can be changed by following [these instructions](/docs/support/log-fil
 - **Octopus Tentacle Logs:**
 - **Audit Logs:**
 - **OctopusMigrator Logs:**
+- **Audit Logs:**
+- **OctopusMigrator Logs:**
 - **Process Dump:**
+
+
+Logging How-Tos
+
+Export Raw logs from a Project Deployment
+Export a Projects Deployment Process as a JSON file
+Perform a Memory Trace
+Perfrom a Performance Trace
+Record a Process Dump
+Record Database Performance Metrics
 
 
   
