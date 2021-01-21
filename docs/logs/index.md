@@ -10,7 +10,7 @@ Your Octopus Server and deployment targets contain various log files. Additional
 
 ## Octopus Deploy On-Premise 
 
-- **Octopus Server Logs** or **Octopus Tentacle Logs:** A default installation installs log files in a subdirectory called `Logs` in Octopus Home. (`C:\Octopus\Logs`) This can be changed during installation or moved after installation. These logs will be named _OctopusServer<em>X</em>.txt_ or _OctopusTentacle<em>X</em>.txt_ respectivily where <em>X<em> denotes the age of the logfile, the higher the number, the older the logfile with the most recent log file being denoted by having no appended digit.
+- **Octopus Server Logs** or **Octopus Tentacle Logs:** A default installation installs log files in a subdirectory called `Logs` in Octopus Home. (`C:\Octopus\Logs`) This can be changed during installation or moved after installation. These logs will be named <b>OctopusServer<em>X</em>.txt</b> or <b>OctopusTentacle<em>X</em>.txt</b> respectivily where <em>X<em> denotes the age of the logfile, the higher the number, the older the logfile with the most recent log file being denoted by having no appended digit.
 
 These logs contain details of the tasks carried out by the server, that are unrelated to project tasks.
 
