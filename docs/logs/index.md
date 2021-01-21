@@ -5,18 +5,19 @@ hideInThisSection: false
 position: 50
 ---
 
-Your Octopus Server and deployment targets contain various log files. Additionally the various integrations also contain their own log files.
+Your Octopus Server and deployment targets contain various log files. Additionally the various integrations also contain their own log files. 
 
-Some you can increase in verbosity while others require a bit of work to get access to them.
-
-This is a non-exhaustive list of logs that may come in handy and a quick description of what they do.
 
 ## Octopus Deploy On-Premise 
 
-- **Octopus Server Logs:** A default installation will mean that log files will be created in a subdirectory called `Logs` in Octopus Home or `C:\Octopus\Logs`
-These logs will contain ...
-Verbosity can be changed by following [these instructions](/docs/support/log-files/index.md)
-- **Octopus Tentacle Logs:**
+- **Octopus Server Logs** or **Octopus Tentacle Logs:** A default installation installs log files in a subdirectory called `Logs` in Octopus Home. (`C:\Octopus\Logs`) This can be changed during installation or moved after installation. These logs will be named _OctopusServer<em>X</em>.txt_ or _OctopusTentacle<em>X</em>.txt_ respectivily where <em>X<em> denotes the age of the logfile, the higher the number, the older the logfile with the most recent log file being denoted by having no appended digit.
+
+These logs contain details of the tasks carried out by the server, that are unrelated to project tasks.
+
+[Verbosity of these logs](/docs/logs/log-files/index.md) can be changed to provide more information for debugging. 
+
+
+
 - **Audit Logs:**
 - **OctopusMigrator Logs:**
 - **Audit Logs:**
