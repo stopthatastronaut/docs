@@ -24,14 +24,19 @@ Verbosity can be changed by following [these instructions](/docs/support/log-fil
 - **Process Dump:**
 
 
-Logging How-Tos
+- [Where to find Server and Tentacle Log Files](/docs/logs/log-files.md)
 
-Export Raw logs from a Project Deployment
-Export a Projects Deployment Process as a JSON file
-Perform a Memory Trace
-Perfrom a Performance Trace
-Record a Process Dump
-Record Database Performance Metrics
+- [Export Raw logs from a Project Deployment or Task](/docs/logs/get-the-raw-output-from-a-task.md)
+- [Export Log files with variable logging](/docs/logs/variable-logging-and-task-log-export.md)
+- [Export a Projects Deployment Process as a JSON file](/docs/logs/deployment-process-as-JSON.md)
+
+- [Record a Memory Trace](/docs/logs/record-a-memory-trace.md)
+- [Record a Performance Trace](/docs/logs/record-a-performance-trace.md)
+- [Record DB Performance Metrics](/docs/logs/providing-database-performance-metrics.md)
+
+- [Record a Process Dump](/docs/logs/process-dumps.md)
+- [Record a Crash Dump](/docs/logs/capture-a-crash-dump.md)
+
 
 
   
