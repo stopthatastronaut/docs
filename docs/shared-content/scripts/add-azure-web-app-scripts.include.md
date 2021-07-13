@@ -222,3 +222,7 @@ uri = '{0}/{1}/machines'.format(octopus_server_uri, space['Id'])
 response = requests.post(uri, headers=headers, json=azure_web_app)
 response.raise_for_status()
 ```
+```go Go
+package main
+
+```
