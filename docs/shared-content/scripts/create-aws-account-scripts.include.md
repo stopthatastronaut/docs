@@ -4,22 +4,29 @@ package main
 import (
 	"fmt"
 	"log"
+	"net/url"
 	"os"
 
-	"github.com/OctopusDeploy/go-octopusdeploy/client"
-	"github.com/OctopusDeploy/go-octopusdeploy/model"
-	"golang.org/x/crypto/ssh/terminal"
+	"syscall"
+
+	"github.com/OctopusDeploy/go-octopusdeploy/octopusdeploy"
+	"golang.org/x/term"
 )
 
 func main() {
 	octopusURL := os.Args[1]
-	space := os.Args[2]
+	spaceId := os.Args[2]
 	name := os.Args[3]
 	accessKey := os.Args[4]
+	apiUrl, err := url.Parse(octopusURL)
+
+	if err != nil {
+		log.Println(err)
+	}
 
 	// Pass in the API key securely
-	fmt.Println("Enter Password Securely: ")
-	apiKey, err := terminal.ReadPassword(0)
+	fmt.Println("Enter API Key Securely: ")
+	apiKey, err := term.ReadPassword(int(syscall.Stdin))
 
 	if err != nil {
 		log.Println(err)
@@ -29,21 +36,22 @@ func main() {
 
 	// Pass in the Azure Client password/secret securely
 	fmt.Println("Enter AWS Secret Key Securely: ")
-	clientPassword, err := terminal.ReadPassword(0)
+	clientPassword, err := term.ReadPassword(int(syscall.Stdin))
 
 	if err != nil {
 		log.Println(err)
 	}
 	password := string(clientPassword)
-	awsSecretKey := model.NewSensitiveValue(password)
+	awsSecretKey := octopusdeploy.NewSensitiveValue(password)
 
 	// Call both functions from the main function
-	octopusAuth(octopusURL, APIKey, space)
-	CreateAWSAccount(octopusURL, APIKey, space, name, accessKey, awsSecretKey)
+	octopusAuth(apiUrl, APIKey, spaceId)
+	CreateAWSAccount(apiUrl, APIKey, spaceId, name, accessKey, awsSecretKey)
 }
 
-func octopusAuth(octopusURL, APIKey, space string) *client.Client {
-	apiClient, err := client.NewClient(nil, octopusURL, APIKey, space)
+func octopusAuth(octopusURL *url.URL, APIKey, spaceId string) *octopusdeploy.Client {
+	apiClient, err := octopusdeploy.NewClient(nil, octopusURL, APIKey, spaceId)
+
 	if err != nil {
 		log.Println(err)
 	}
@@ -51,9 +59,9 @@ func octopusAuth(octopusURL, APIKey, space string) *client.Client {
 	return apiClient
 }
 
-func CreateAWSAccount(octopusURL string, APIKey string, space string, name string, accessKey string, awsSecretKey model.SensitiveValue) *model.Account {
-	apiClient := octopusAuth(octopusURL, APIKey, space)
-	Account, err := model.NewAwsServicePrincipalAccount(name, accessKey, awsSecretKey)
+func CreateAWSAccount(octopusURL *url.URL, APIKey string, spaceId string, name string, accessKey string, awsSecretKey *octopusdeploy.SensitiveValue) *octopusdeploy.AmazonWebServicesAccount {
+	apiClient := octopusAuth(octopusURL, APIKey, spaceId)
+	Account, err := octopusdeploy.NewAmazonWebServicesAccount(name, accessKey, awsSecretKey)
 
 	if err != nil {
 		log.Println(err)
