@@ -298,3 +298,71 @@ uri = '{0}/{1}/accounts'.format(octopus_server_uri, space['Id'])
 response = requests.post(uri, headers=headers, json=account)
 response.raise_for_status()
 ```
+```go Go
+package main
+
+import (
+	"fmt"
+	"log"
+
+	"net/url"
+
+	"github.com/OctopusDeploy/go-octopusdeploy/octopusdeploy"
+)
+
+func main() {
+
+	apiURL, err := url.Parse("https://YourURL")
+	if err != nil {
+		log.Println(err)
+	}
+	APIKey := "API-YourAPIKey"
+	awsAccountName := "MyAWSAccount"
+	awsAccessKey := "MyAccessKey"
+	awsSecretKey := "MySecretKey"
+	awsSecretKeySensitive := octopusdeploy.SensitiveValue{
+		HasValue: true,
+		NewValue: &awsSecretKey,
+	}
+	spaceName := "Default"
+
+	// Get space
+	space := GetSpace(apiURL, APIKey, spaceName)
+
+	// Create client
+	client := octopusAuth(apiURL, APIKey, space.ID)
+
+	// Create AWS account object
+	awsAccount, err := octopusdeploy.NewAmazonWebServicesAccount(awsAccountName, awsAccessKey, &awsSecretKeySensitive)
+
+	if err != nil {
+		log.Println(err)
+	}
+	
+	client.Accounts.Add(awsAccount)
+}
+
+func octopusAuth(octopusURL *url.URL, APIKey, space string) *octopusdeploy.Client {
+	client, err := octopusdeploy.NewClient(nil, octopusURL, APIKey, space)
+	if err != nil {
+		log.Println(err)
+	}
+
+	return client
+}
+
+func GetSpace(octopusURL *url.URL, APIKey string, spaceName string) *octopusdeploy.Space {
+	client := octopusAuth(octopusURL, APIKey, "")
+
+	// Get specific space object
+	space, err := client.Spaces.GetByName(spaceName)
+
+	if err != nil {
+		log.Println(err)
+	} else {
+		fmt.Println("Retrieved space " + space.Name)
+	}
+
+	return space
+}
+```
